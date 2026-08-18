@@ -1,0 +1,458 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "name": "NIST AI RMF + ISO 42001 Knowledge Base",
+    "created": "2026-08-18",
+    "description": "Core requirements for AI governance gap analysis"
+  },
+  "frameworks": {
+    "NIST_AI_RMF": {
+      "name": "NIST AI RMF 1.0",
+      "functions": {
+        "GOVERN": {
+          "name": "Govern",
+          "description": "Cultivates and implements a culture of risk management. Cross-cutting function informing all others.",
+          "categories": [
+            {
+              "id": "GOVERN-1",
+              "name": "Policies, processes, procedures, and practices",
+              "subcategories": [
+                {
+                  "id": "GOVERN-1.1",
+                  "description": "Legal and regulatory requirements involving AI are understood, managed, and documented.",
+                  "keywords": ["legal", "regulatory", "compliance", "requirements", "laws"]
+                },
+                {
+                  "id": "GOVERN-1.2",
+                  "description": "The characteristics of trustworthy AI are integrated into organizational policies, processes, procedures, and practices.",
+                  "keywords": ["trustworthy", "policies", "practices", "integration"]
+                },
+                {
+                  "id": "GOVERN-1.3",
+                  "description": "Processes, procedures, and practices are in place to determine the needed level of risk management activities based on the organization's risk tolerance.",
+                  "keywords": ["risk tolerance", "risk management", "assessment"]
+                },
+                {
+                  "id": "GOVERN-1.4",
+                  "description": "The risk management process and its outcomes are established through transparent policies, procedures, and other controls based on organizational risk priorities.",
+                  "keywords": ["risk management", "transparency", "policies", "priorities"]
+                },
+                {
+                  "id": "GOVERN-1.5",
+                  "description": "Ongoing monitoring and periodic review of the risk management process and its outcomes are planned and organizational roles and responsibilities clearly defined.",
+                  "keywords": ["monitoring", "review", "roles", "responsibilities"]
+                },
+                {
+                  "id": "GOVERN-1.6",
+                  "description": "Mechanisms are in place to inventory AI systems and are resourced according to organizational risk priorities.",
+                  "keywords": ["inventory", "AI systems", "resources", "priorities"]
+                },
+                {
+                  "id": "GOVERN-1.7",
+                  "description": "Processes and procedures are in place for decommissioning and phasing out AI systems safely and in a manner that does not increase risks or decrease the organization's trustworthiness.",
+                  "keywords": ["decommissioning", "phase out", "retirement", "safety"]
+                }
+              ]
+            },
+            {
+              "id": "GOVERN-2",
+              "name": "Accountability structures",
+              "subcategories": [
+                {
+                  "id": "GOVERN-2.1",
+                  "description": "Roles and responsibilities and lines of communication related to mapping, measuring, and managing AI risks are documented and clear.",
+                  "keywords": ["roles", "responsibilities", "accountability", "communication"]
+                },
+                {
+                  "id": "GOVERN-2.2",
+                  "description": "The organization's personnel and partners receive AI risk management training to enable them to perform their duties and responsibilities.",
+                  "keywords": ["training", "competence", "awareness", "personnel"]
+                },
+                {
+                  "id": "GOVERN-2.3",
+                  "description": "Executive leadership of the organization takes responsibility for decisions about risks associated with AI system development and deployment.",
+                  "keywords": ["executive", "leadership", "accountability", "decision-making"]
+                }
+              ]
+            },
+            {
+              "id": "GOVERN-3",
+              "name": "Workforce diversity, equity, inclusion, and accessibility",
+              "subcategories": [
+                {
+                  "id": "GOVERN-3.1",
+                  "description": "Decision-making related to mapping, measuring, and managing AI risks is informed by a diverse team (demographics, disciplines, experience, expertise, and backgrounds).",
+                  "keywords": ["diversity", "team", "inclusion", "decision-making"]
+                },
+                {
+                  "id": "GOVERN-3.2",
+                  "description": "Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.",
+                  "keywords": ["human oversight", "roles", "responsibilities", "oversight"]
+                }
+              ]
+            },
+            {
+              "id": "GOVERN-4",
+              "name": "Organizational culture",
+              "subcategories": [
+                {
+                  "id": "GOVERN-4.1",
+                  "description": "Organizational policies and practices are in place to foster a critical thinking and safety-first mindset in the design, development, deployment, and uses of AI systems.",
+                  "keywords": ["culture", "safety", "mindset", "policies"]
+                },
+                {
+                  "id": "GOVERN-4.2",
+                  "description": "Organizational teams document the risks and potential impacts of the AI technology they design, develop, deploy, evaluate, and use.",
+                  "keywords": ["documentation", "risks", "impacts", "transparency"]
+                },
+                {
+                  "id": "GOVERN-4.3",
+                  "description": "Organizational practices are in place to enable AI testing, identification of incidents, and information sharing.",
+                  "keywords": ["testing", "incidents", "information sharing", "monitoring"]
+                }
+              ]
+            },
+            {
+              "id": "GOVERN-5",
+              "name": "Engagement with AI actors",
+              "subcategories": [
+                {
+                  "id": "GOVERN-5.1",
+                  "description": "Organizational policies and practices are in place to collect, consider, prioritize, and integrate feedback from those external to the team regarding potential individual and societal impacts.",
+                  "keywords": ["feedback", "external", "stakeholders", "impacts"]
+                },
+                {
+                  "id": "GOVERN-5.2",
+                  "description": "Mechanisms are established to enable the team to regularly incorporate adjudicated feedback from relevant AI actors into system design and implementation.",
+                  "keywords": ["feedback", "integration", "improvement", "stakeholders"]
+                }
+              ]
+            },
+            {
+              "id": "GOVERN-6",
+              "name": "Third-party and supply chain",
+              "subcategories": [
+                {
+                  "id": "GOVERN-6.1",
+                  "description": "Policies and procedures are in place that address AI risks associated with third-party entities, including risks of infringement of intellectual property or other rights.",
+                  "keywords": ["third-party", "supply chain", "intellectual property", "risk"]
+                },
+                {
+                  "id": "GOVERN-6.2",
+                  "description": "Contingency processes are in place to handle failures or incidents in third-party data or AI systems deemed to be high-risk.",
+                  "keywords": ["contingency", "third-party", "failures", "incidents"]
+                }
+              ]
+            }
+          ]
+        },
+        "MAP": {
+          "name": "Map",
+          "description": "Establishes the context to frame risks related to an AI system.",
+          "categories": [
+            {
+              "id": "MAP-1",
+              "name": "Context establishment",
+              "subcategories": [
+                {
+                  "id": "MAP-1.1",
+                  "description": "Intended purposes, beneficial uses, laws, norms, expectations, and deployment settings are understood and documented.",
+                  "keywords": ["context", "purpose", "deployment", "expectations"]
+                },
+                {
+                  "id": "MAP-1.2",
+                  "description": "Interdisciplinary AI actors, competencies, skills, and capacities for establishing context reflect demographic diversity and domain expertise.",
+                  "keywords": ["interdisciplinary", "diversity", "expertise", "team"]
+                },
+                {
+                  "id": "MAP-1.3",
+                  "description": "The organization's mission and relevant goals for AI technology are understood and documented.",
+                  "keywords": ["mission", "goals", "strategy", "objectives"]
+                },
+                {
+                  "id": "MAP-1.4",
+                  "description": "The business value or context of business use has been clearly defined or re-evaluated.",
+                  "keywords": ["business value", "use case", "definition"]
+                },
+                {
+                  "id": "MAP-1.5",
+                  "description": "Organizational risk tolerances are determined and documented.",
+                  "keywords": ["risk tolerance", "acceptance", "appetite"]
+                },
+                {
+                  "id": "MAP-1.6",
+                  "description": "System requirements are elicited from and understood by relevant AI actors. Design decisions take socio-technical implications into account.",
+                  "keywords": ["requirements", "socio-technical", "design", "actors"]
+                }
+              ]
+            },
+            {
+              "id": "MAP-2",
+              "name": "AI system categorization",
+              "subcategories": [
+                {
+                  "id": "MAP-2.1",
+                  "description": "The specific tasks and methods used to implement the tasks that the AI system will support are defined.",
+                  "keywords": ["tasks", "methods", "functionality", "purpose"]
+                },
+                {
+                  "id": "MAP-2.2",
+                  "description": "Information about the AI system's knowledge limits and how system output may be utilized and overseen by humans is documented.",
+                  "keywords": ["limits", "human oversight", "documentation", "boundaries"]
+                },
+                {
+                  "id": "MAP-2.3",
+                  "description": "Scientific integrity and TEVV considerations are identified and documented.",
+                  "keywords": ["TEVV", "validation", "verification", "testing", "integrity"]
+                }
+              ]
+            },
+            {
+              "id": "MAP-3",
+              "name": "AI capabilities and benefits",
+              "subcategories": [
+                {
+                  "id": "MAP-3.1",
+                  "description": "Potential benefits of intended AI system functionality and performance are examined and documented.",
+                  "keywords": ["benefits", "value", "objectives", "performance"]
+                },
+                {
+                  "id": "MAP-3.2",
+                  "description": "Potential costs, including non-monetary costs, which result from expected or realized AI errors or system functionality are examined and documented.",
+                  "keywords": ["costs", "errors", "risks", "impacts"]
+                },
+                {
+                  "id": "MAP-3.3",
+                  "description": "Targeted application scope is specified and documented based on the system's capability, established context, and AI system categorization.",
+                  "keywords": ["scope", "application", "context", "capability"]
+                },
+                {
+                  "id": "MAP-3.4",
+                  "description": "Processes for operator and practitioner proficiency with AI system performance are defined, assessed, and documented.",
+                  "keywords": ["proficiency", "training", "operator", "competence"]
+                },
+                {
+                  "id": "MAP-3.5",
+                  "description": "Processes for human oversight are defined, assessed, and documented in accordance with organizational policies.",
+                  "keywords": ["human oversight", "oversight", "monitoring", "review"]
+                }
+              ]
+            },
+            {
+              "id": "MAP-4",
+              "name": "Third-party risk mapping",
+              "subcategories": [
+                {
+                  "id": "MAP-4.1",
+                  "description": "Approaches for mapping AI technology and legal risks of its components are in place, followed, and documented.",
+                  "keywords": ["third-party", "supply chain", "risk mapping", "legal"]
+                },
+                {
+                  "id": "MAP-4.2",
+                  "description": "Internal risk controls for components of the AI system, including third-party AI technologies, are identified and documented.",
+                  "keywords": ["risk controls", "third-party", "components", "identification"]
+                }
+              ]
+            },
+            {
+              "id": "MAP-5",
+              "name": "Impact characterization",
+              "subcategories": [
+                {
+                  "id": "MAP-5.1",
+                  "description": "Likelihood and magnitude of each identified impact based on expected use, past uses, public incident reports, and feedback are identified and documented.",
+                  "keywords": ["impact", "likelihood", "magnitude", "feedback"]
+                },
+                {
+                  "id": "MAP-5.2",
+                  "description": "Practices and personnel for supporting regular engagement with relevant AI actors and integrating feedback are in place and documented.",
+                  "keywords": ["engagement", "feedback", "stakeholders", "integration"]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "ISO_42001": {
+      "name": "ISO/IEC 42001:2023",
+      "description": "Artificial Intelligence Management System",
+      "clauses": {
+        "A.2": {
+          "name": "Policies related to AI",
+          "description": "To provide management direction and support for AI systems according to business requirements.",
+          "controls": [
+            {
+              "id": "A.2.2",
+              "name": "AI policy",
+              "description": "The organization shall document a policy for the development or use of AI systems.",
+              "keywords": ["policy", "documentation", "development", "use"]
+            },
+            {
+              "id": "A.2.3",
+              "name": "Alignment with other organizational policies",
+              "description": "The organization shall determine where other policies can be affected by or apply to, the organization's objectives with respect to AI systems.",
+              "keywords": ["alignment", "policies", "integration", "objectives"]
+            },
+            {
+              "id": "A.2.4",
+              "name": "Review of the AI policy",
+              "description": "The AI policy shall be reviewed at planned intervals or additionally as needed to ensure its continuing suitability, adequacy and effectiveness.",
+              "keywords": ["review", "policy", "periodic", "suitability"]
+            }
+          ]
+        },
+        "A.3": {
+          "name": "Internal organization",
+          "description": "To establish accountability within the organization for the implementation, operation and management of AI systems.",
+          "controls": [
+            {
+              "id": "A.3.2",
+              "name": "AI roles and responsibilities",
+              "description": "Roles and responsibilities for AI shall be defined and allocated according to the needs of the organization.",
+              "keywords": ["roles", "responsibilities", "accountability", "allocation"]
+            },
+            {
+              "id": "A.3.3",
+              "name": "Reporting of concerns",
+              "description": "The organization shall define and put in place a process to report concerns about the organization's role with respect to an AI system throughout its life cycle.",
+              "keywords": ["reporting", "concerns", "whistleblowing", "life cycle"]
+            }
+          ]
+        },
+        "A.4": {
+          "name": "Resources for AI systems",
+          "description": "To ensure that the organization accounts for the resources of the AI system to fully understand and address risks and impacts.",
+          "controls": [
+            {
+              "id": "A.4.2",
+              "name": "Resource documentation",
+              "description": "The organization shall identify and document relevant resources required for the activities at given AI system life cycle stages.",
+              "keywords": ["resources", "documentation", "life cycle", "components"]
+            },
+            {
+              "id": "A.4.3",
+              "name": "Data resources",
+              "description": "As part of resource identification, the organization shall document information about the data resources utilized for the AI system.",
+              "keywords": ["data", "resources", "provenance", "quality"]
+            },
+            {
+              "id": "A.4.4",
+              "name": "Tooling resources",
+              "description": "As part of resource identification, the organization shall document information about the tooling resources utilized for the AI system.",
+              "keywords": ["tools", "models", "algorithms", "infrastructure"]
+            },
+            {
+              "id": "A.4.5",
+              "name": "System and computing resources",
+              "description": "As part of resource identification, the organization shall document information about the system and computing resources utilized for the AI system.",
+              "keywords": ["computing", "hardware", "infrastructure", "resources"]
+            },
+            {
+              "id": "A.4.6",
+              "name": "Human resources",
+              "description": "As part of resource identification, the organization shall document information about human resources and their competences utilized for the AI system.",
+              "keywords": ["personnel", "competence", "expertise", "team"]
+            }
+          ]
+        },
+        "A.6": {
+          "name": "AI system life cycle",
+          "description": "To define the criteria and requirements for each stage of the AI system life cycle.",
+          "controls": [
+            {
+              "id": "A.6.1.2",
+              "name": "Objectives for responsible development",
+              "description": "The organization shall identify and document objectives to guide the responsible development of AI systems, and integrate measures to achieve them.",
+              "keywords": ["development", "objectives", "responsible", "integration"]
+            },
+            {
+              "id": "A.6.1.3",
+              "name": "Processes for responsible design and development",
+              "description": "The organization shall define and document the specific processes for the responsible design and development of the AI system.",
+              "keywords": ["design", "development", "processes", "responsible"]
+            },
+            {
+              "id": "A.6.2.2",
+              "name": "AI system requirements and specification",
+              "description": "The organization shall specify and document requirements for new AI systems or material enhancements to existing systems.",
+              "keywords": ["requirements", "specification", "documentation", "enhancements"]
+            },
+            {
+              "id": "A.6.2.4",
+              "name": "AI system verification and validation",
+              "description": "The organization shall define and document verification and validation measures for the AI system and specify criteria for their use.",
+              "keywords": ["verification", "validation", "testing", "criteria"]
+            },
+            {
+              "id": "A.6.2.5",
+              "name": "AI system deployment",
+              "description": "The organization shall document a deployment plan and ensure that appropriate requirements are met prior to deployment.",
+              "keywords": ["deployment", "plan", "release", "criteria"]
+            },
+            {
+              "id": "A.6.2.6",
+              "name": "AI system operation and monitoring",
+              "description": "The organization shall define and document the necessary elements for the ongoing operation of the AI system, including system and performance monitoring, repairs, updates and support.",
+              "keywords": ["operation", "monitoring", "maintenance", "updates"]
+            },
+            {
+              "id": "A.6.2.7",
+              "name": "AI system technical documentation",
+              "description": "The organization shall determine what AI system technical documentation is needed for each relevant category of interested parties.",
+              "keywords": ["technical documentation", "users", "stakeholders", "information"]
+            }
+          ]
+        },
+        "A.9": {
+          "name": "Use of AI systems",
+          "description": "To ensure that the organization uses AI systems responsibly and per organizational policies.",
+          "controls": [
+            {
+              "id": "A.9.2",
+              "name": "Processes for responsible use of AI systems",
+              "description": "The organization shall define and document the processes for the responsible use of AI systems.",
+              "keywords": ["responsible use", "processes", "usage", "policies"]
+            },
+            {
+              "id": "A.9.3",
+              "name": "Objectives for responsible use of AI system",
+              "description": "The organization shall identify and document objectives to guide the responsible use of AI systems.",
+              "keywords": ["objectives", "responsible use", "fairness", "accountability"]
+            },
+            {
+              "id": "A.9.4",
+              "name": "Intended use of the AI system",
+              "description": "The organization shall ensure that the AI system is used according to the intended uses and its accompanying documentation.",
+              "keywords": ["intended use", "documentation", "compliance", "usage"]
+            }
+          ]
+        },
+        "A.10": {
+          "name": "Third-party and customer relationships",
+          "description": "To ensure that the organization understands its responsibilities and remains accountable when third parties are involved.",
+          "controls": [
+            {
+              "id": "A.10.2",
+              "name": "Allocating responsibilities",
+              "description": "The organization shall ensure that responsibilities within their AI system life cycle are allocated between the organization, its partners, suppliers, customers and third parties.",
+              "keywords": ["responsibilities", "third-party", "allocation", "suppliers"]
+            },
+            {
+              "id": "A.10.3",
+              "name": "Suppliers",
+              "description": "The organization shall establish a process to ensure that its usage of services, products or materials provided by suppliers aligns with its approach to responsible development and use.",
+              "keywords": ["suppliers", "procurement", "alignment", "responsible"]
+            },
+            {
+              "id": "A.10.4",
+              "name": "Customers",
+              "description": "The organization shall ensure that its responsible approach to the development and use of AI systems considers their customer expectations and needs.",
+              "keywords": ["customers", "expectations", "needs", "stakeholders"]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
