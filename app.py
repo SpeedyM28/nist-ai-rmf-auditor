@@ -85,10 +85,17 @@ if generate_button and uploaded_file is not None:
         
         # Clean up temp file
         os.unlink(tmp_path)
+
+        # Get API key from environment or Streamlit secrets
+        api_key = os.environ.get("GOOGLE_API_KEY") or st.secrets.get("GOOGLE_API_KEY")
+
+        if not api_key:
+            st.error("❌ GOOGLE_API_KEY not found. Please add it to Streamlit secrets.")
+            st.stop()
         
         # Initialize auditor
         kb_path = "src/knowledge_base/knowledge_base.json"
-        auditor = AIAuditor(kb_path, selected_model)
+        auditor = AIAuditor(kb_path, selected_model, api_key=api_key)
         
         # Run audit
         with st.spinner(f"🧠 Analyzing policy with {selected_model}..."):

@@ -19,16 +19,16 @@ load_dotenv()
 class AIAuditor:
     """Uses LLM to analyze AI policies against NIST AI RMF and ISO 42001."""
     
-    def __init__(self, knowledge_base_path: str, model_name: str = "gemini-1.5-flash"):
+    def __init__(self, knowledge_base_path: str, model_name: str = "gemini-1.5-flash", api_key: str = None):
         """Initialize the auditor with a knowledge base."""
         self.knowledge_base = self._load_knowledge_base(knowledge_base_path)
         self.model_name = model_name
         
         # Initialize Gemini if available
         if genai is not None:
-            api_key = os.environ.get("GOOGLE_API_KEY")
-            if api_key:
-                genai.configure(api_key=api_key)
+            key_to_use = api_key or os.environ.get("GOOGLE_API_KEY")
+            if key_to_use:
+                genai.configure(api_key=key_to_use)
                 self.model = genai.GenerativeModel(model_name)
             else:
                 print("Warning: GOOGLE_API_KEY not set. Set it with: export GOOGLE_API_KEY='your-key'")
