@@ -10,6 +10,11 @@ try:
 except ImportError:
     genai = None
 
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
 
 class AIAuditor:
     """Uses LLM to analyze AI policies against NIST AI RMF and ISO 42001."""
@@ -63,7 +68,7 @@ class AIAuditor:
             You are an expert AI auditor. Analyze the following AI policy document against NIST AI RMF and ISO/IEC 42001 requirements.
 
             POLICY DOCUMENT:
-            ""{policy_text[:50000]}""
+            ""{policy_text}""
             REQUIREMENTS TO CHECK:
             ""{json.dumps(requirements, indent=2)}""
 
