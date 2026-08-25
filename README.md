@@ -1,6 +1,16 @@
 # NIST AI RMF + ISO 42001 Auditor
 
+[![Live Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nist-ai-rmf-auditor.streamlit.app)
+
 An automated AI governance tool that analyzes organizational AI policies against **NIST AI RMF 1.0** and **ISO/IEC 42001:2023** using Gemini LLMs. Identifies compliance gaps and generates detailed audit reports.
+
+---
+
+## Live Demo
+
+Try the tool live: **[https://nist-ai-rmf-auditor.streamlit.app](https://nist-ai-rmf-auditor.streamlit.app)**
+
+Upload your AI policy and get a compliance report instantly.
 
 ---
 
@@ -24,6 +34,7 @@ This tool automates the gap analysis:
 - **Dual-framework auditing**: NIST AI RMF 1.0 + ISO/IEC 42001:2023
 - **Gemini LLM integration**: Powered by Google Gemini (3.1 Flash-Lite to 3.1 Pro)
 - **Structured reports**: Markdown, HTML, or JSON output
+- **Web Interface**: Upload and analyze policies via Streamlit UI
 - **Portfolio-ready**: Designed to demonstrate AI governance expertise
 
 ---
@@ -51,21 +62,27 @@ cp .env.example .env
 
 ## Usage
 
-### Basic Command
+### CLI (Command Line Interface)
 
 ```
+# Basic usage
 python src/main.py --policy path/to/policy.pdf --output report.md
-```
 
-### Advanced Options
-
-```
+# With custom model and format
 python src/main.py \
   --policy path/to/policy.pdf \
   --output report.html \
   --model gemini-3.6-flash \
   --format html
 ```
+
+### Web Interface (Streamlit)
+
+```
+streamlit run app.py
+```
+
+Then open `http://localhost:8501` in your browser.
 
 ### Options
 
@@ -112,6 +129,22 @@ python src/main.py \
 - **GOVERN-6.2**: No contingency plans for third-party failures
 - **MAP-3.4**: No operator proficiency standards
 
+### Microsoft AI Policy Test (Full comprehensive policy)
+
+| Metric | Count |
+| :--- | :--- |
+| Total Requirements | 37 |
+| Compliant | 36 |
+| Partial | 0 |
+| Gaps | 1 |
+| Compliance Rate | **97.3%** |
+
+✅ The tool correctly recognized Microsoft's comprehensive AI governance framework.  
+✅ The **1 gap** is a genuine omission—no explicit decommissioning procedures for AI systems.
+
+**The 1 gap found:**
+- **GOVERN-1.7**: No decommissioning/retirement procedures for AI systems
+
 ---
 
 ## Model Selection
@@ -130,15 +163,44 @@ python src/main.py \
 
 ### Character Limit
 
-The tool truncates policy text to **50,000 characters** by default. To modify:
+The tool **does not impose a character limit** by default. The full policy text is sent to the LLM for maximum accuracy.
 
-Edit `src/engine/auditor.py` in the `_build_prompt` method:
+Gemini models have a **1M token context window**—they can handle full policy documents.
+
+To add a limit (if needed), edit `src/engine/auditor.py` in the `_build_prompt` method:
 
 ```
-policy_preview = policy_text[:50000]  # Change this value
+policy_preview = policy_text[:50000]  # Add this line to limit
 ```
 
-Gemini 1.5 models have a **1M token context window**—you can safely increase the limit.
+---
+
+## Deployment
+
+The tool is deployed on **Streamlit Community Cloud**:
+
+**[https://nist-ai-rmf-auditor.streamlit.app](https://nist-ai-rmf-auditor.streamlit.app)**
+
+To deploy your own instance:
+1. Fork the repository
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub account
+4. Select the repository and branch
+5. Set the main file to `app.py`
+6. Add your `GOOGLE_API_KEY` in the secrets section
+7. Click "Deploy"
+
+---
+
+## Note on API Usage
+
+This tool relies on the Google Gemini API, which operates under usage quotas and rate limits. While the application is designed to handle typical policy documents efficiently, performance may vary based on:
+
+- Document length and complexity
+- Concurrent usage and API availability
+- Daily quota consumption
+
+The tool is hosted on the Streamlit Community Cloud free tier, which provides a demonstration environment for individual use. For production workloads or enterprise deployment, consider implementing additional error handling, request queuing, and monitoring to ensure reliable operation at scale.
 
 ---
 
@@ -146,18 +208,19 @@ Gemini 1.5 models have a **1M token context window**—you can safely increase t
 
 ```
 nist-ai-rmf-auditor/
+├── app.py                     # Streamlit web interface
 ├── src/
-│   ├── main.py                 # CLI entry point
+│   ├── main.py                # CLI entry point
 │   ├── knowledge_base/
 │   │   └── knowledge_base.json # NIST AI RMF + ISO 42001 requirements
 │   ├── engine/
-│   │   ├── extractor.py        # PDF/DOCX/MD text extraction
-│   │   └── auditor.py          # LLM gap analysis logic
+│   │   ├── extractor.py       # PDF/DOCX/MD text extraction
+│   │   └── auditor.py         # LLM gap analysis logic
 │   └── reporting/
 │       └── report_generator.py # Markdown/HTML/JSON report generation
 ├── tests/
-│   └── sample_policies/        # Sample policies for testing
-├── .env                        # GOOGLE_API_KEY
+│   └── sample_policies/       # Sample policies for testing
+├── .env                       # GOOGLE_API_KEY
 ├── requirements.txt
 └── README.md
 ```
@@ -172,12 +235,15 @@ nist-ai-rmf-auditor/
 
 ---
 
-## Next Steps
+## Future Improvements
 
-- [ ] Streamlit web interface (upload + view reports)
+- [x] Streamlit web interface
+- [x] Full document processing (no character limit)
 - [ ] Additional model support (Claude, OpenAI, open-source)
 - [ ] Real-time policy drafting with LLM-powered suggestions
 - [ ] Integration with GRC tools (Archer, ServiceNow GRC)
+- [ ] Export to PDF, Excel, and other formats
+- [ ] Enterprise-grade rate limit handling and monitoring
 
 ---
 
@@ -189,17 +255,20 @@ MIT
 
 ## Contact
 
-Built by Jamil Bitar
-[[LinkedIn URL](https://www.linkedin.com/in/jamil-bitar/)]  
-[[GitHub URL](https://github.com/SpeedyM28/)]
+Built by **Jamil Bitar**
+
+- [LinkedIn](https://www.linkedin.com/in/jamil-bitar/)
+- [GitHub](https://github.com/SpeedyM28/)
 
 ---
 
 ## Acknowledgments
 
-- NIST AI RMF 1.0: https://www.nist.gov/itl/ai-risk-management-framework
-- ISO/IEC 42001:2023: Artificial Intelligence Management System
+- [NIST AI RMF 1.0](https://www.nist.gov/itl/ai-risk-management-framework)
+- [ISO/IEC 42001:2023](https://www.iso.org/standard/81230.html) - Artificial Intelligence Management System
+- [Google Gemini](https://ai.google.dev/) - LLM API
 
 ---
 
 **Last Updated:** August 2026
+```
