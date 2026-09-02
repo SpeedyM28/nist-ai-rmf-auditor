@@ -1,0 +1,28 @@
+DUMMY POLICY: Acme Corp Interim AI Governance Directive (v0.9)
+Effective Date: August 2026
+
+Scope: This policy applies to all employees, contractors, and third-party vendors who design, develop, deploy, or operate AI systems (including generative AI) on behalf of Acme Corp.
+
+Section 1: Legal & Regulatory Compliance
+
+All AI systems deployed by Acme Corp must comply with applicable laws, regulations, and industry standards in every jurisdiction where we operate. The Legal Department is responsible for maintaining a register of AI-specific legal obligations. Any non-compliance must be reported to the Chief Compliance Officer within 48 hours.
+
+Section 2: AI System Inventory
+
+Acme Corp maintains a master spreadsheet listing all production AI models, their owners, and their deployment dates. The CTO's office updates this spreadsheet quarterly. Prioritization of inventory maintenance is done on a best-effort basis, with no specific resource allocation tied to risk level of each system.
+
+Section 3: Monitoring & Review
+
+The AI Governance Board conducts a formal review of high-risk AI systems every six months. Metrics on model drift, accuracy, and user complaints are reviewed during these sessions. Findings are documented and distributed to relevant stakeholders.
+
+Section 4: Third-Party & Supply Chain
+
+Acme Corp uses third-party AI services (including large language models and cloud AI APIs). We require vendors to provide SOC 2 Type II reports. However, no formal contingency processes exist if a critical third-party AI service experiences an outage, fails, or unexpectedly changes its model behavior.
+
+Section 5: Human Oversight & Operator Proficiency
+
+For all AI-generated outputs that influence customer-facing decisions, a human operator must review and approve before finalization. Operators are given access to the AI output interface. No formal training or competency assessment is required for operators prior to performing these reviews.
+
+Section 6: Risk Tolerance & Business Context
+
+Acme Corp is committed to responsible AI. Our risk appetite is generally conservative, but it is not formally documented or quantified. Business leaders make ad-hoc risk decisions on a case-by-case basis.

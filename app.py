@@ -40,6 +40,12 @@ with st.sidebar:
     )
     
     st.caption("💡 3.6 Flash offers the best balance of cost and quality")
+    
+    # NEW: NCA-ECC toggle
+    nca_mode = st.checkbox(
+        "🇸🇦 Export for Saudi NCA-ECC Compliance",
+        help="Maps NIST AI RMF findings to Saudi NCA-ECC controls for KSA regulatory alignment"
+    )
 
 # Main area - two columns
 col1, col2 = st.columns([1, 1])
@@ -106,7 +112,8 @@ if generate_button and uploaded_file is not None:
             # Save report to temp file
             report_path = tempfile.NamedTemporaryFile(delete=False, suffix=".md").name
             generator = ReportGenerator(kb_path, report_path)
-            generator.generate(results, "markdown")
+            # NEW: pass nca_mode flag
+            generator.generate(results, "markdown", nca_mode=nca_mode)
             
             # Read report content
             with open(report_path, 'r', encoding='utf-8') as f:
@@ -123,8 +130,11 @@ if generate_button and uploaded_file is not None:
         rate = (compliant / max(total, 1)) * 100
         
         with col2:
+            # NEW: Show NCA badge
+            badge = "🇸🇦 NCA-ECC Mode" if nca_mode else "🧠 Standard Mode"
             report_placeholder.markdown(f"""
             ### ✅ Audit Complete
+            **Mode:** {badge}
             
             | Metric | Count |
             | :--- | :--- |

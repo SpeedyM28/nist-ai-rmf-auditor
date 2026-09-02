@@ -59,6 +59,12 @@ Examples:
         default="markdown",
         help="Output format (default: markdown)"
     )
+
+    parser.add_argument(
+        "--saudi",
+        action="store_true",
+        help="Enable Saudi NCA-ECC mapping"
+    )
     
     args = parser.parse_args()
     
@@ -96,7 +102,8 @@ Examples:
     
     print(f"📊 Generating report: {args.output}")
     generator = ReportGenerator(args.knowledge_base, args.output)
-    generator.generate(results, args.format)
+    # generator.generate(results, args.format)
+    generator.generate(results, args.format, nca_mode=args.saudi)
     
     print(f"✅ Report saved to: {args.output}")
 
